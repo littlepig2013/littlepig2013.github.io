@@ -5,7 +5,8 @@ permalink: /publications/
 author_profile: true
 ---
 
-# Conference/Journal Papers 
+<h2> <i>Conference/Journal Papers </i></h2>
+
 
 <b>Enabling Timely and Persistent Deletion in LSM-Engines </b><br>
 Subhadeep Sarkar, Tarikul Islam Papon, <b>Zichen Zhu</b>, Dimitris Staratzis, Manos Athanassoulis. <i> TODS, 2023. </i>
@@ -27,7 +28,9 @@ Subhadeep Sarkar, Dimitris Staratzis, <b>Zichen Zhu</b>, Manos Athanassoulis. <i
 <b>[Design Continuums and the Path Toward Self-Designing Key-Value Stores that Know and Learn. ](https://stratos.seas.harvard.edu/publications/design-continuums-and-path-toward-self-designing-key-value-stores-know-and) </b> <br>
 Stratos Idreos, Niv Dayan, Wilson Qin, Mali Akmanalp, Sophie Hilgard, Andrew Ross, James Lennon, Varun Jain, Harshita Gupta, David Li, <b>Zichen Zhu</b>.  <i> CIDR 2019.</i>
 
-# Workshop/Demo
+<hr>
+
+<h2> <i> Workshop/Demo</i></h2>
 
 <b>Acheron: Persisting Tombstones in LSM Engines </b><br>
 <b>Zichen Zhu</b>, Subhadeep Sakar, Manos Athanassoulis. <i> SIGMOD Demo, 2023. </i>
