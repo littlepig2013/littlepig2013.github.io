@@ -7,11 +7,13 @@ author_profile: true
 
 <h2> <i>Conference/Journal Papers </i></h2>
 
+<b>[NOCAP: Near-Optimal Correlation-Aware Partitioning Join](https://dl.acm.org/doi/10.1145/3626739) </b><br>
+<b>Zichen Zhu</b>, Xiao Hu, Manos Athanassoulis. <i> SIGMOD, 2024. </i>
 
-<b>Enabling Timely and Persistent Deletion in LSM-Engines </b><br>
+<b>[Enabling Timely and Persistent Deletion in LSM-Engines](https://dl.acm.org/doi/abs/10.1145/3599724) </b><br>
 Subhadeep Sarkar, Tarikul Islam Papon, <b>Zichen Zhu</b>, Dimitris Staratzis, Manos Athanassoulis. <i> TODS, 2023. </i>
 
-<b>Multi-Task Processing in Vertex-Centric Graph Systems: Evaluations and Insights</b><br>
+<b>[Multi-Task Processing in Vertex-Centric Graph Systems: Evaluations and Insights](https://openproceedings.org/2023/conf/edbt/paper-176.pdf)</b><br>
 Siqiang Luo\*, <b>Zichen Zhu\*</b>, Xiaokui Xiao, Yin Yang, Chunbo Li, Ben Kao (\* Equal Contribution). <i> EDBT, 2023 </i>
 
 <b>Building Deletion-Compliant Data Systems</b><br>
@@ -31,6 +33,9 @@ Stratos Idreos, Niv Dayan, Wilson Qin, Mali Akmanalp, Sophie Hilgard, Andrew Ros
 <hr>
 
 <h2> <i> Workshop/Demo</i></h2>
+
+<b>[SHaMBa: Reducing Bloom Filter Overhead in LSM Trees](https://ceur-ws.org/Vol-3452/paper5.pdf")</b><br>
+<b>Zichen Zhu</b> <i> VLDB PhD Workshop, 2023. </i>
 
 <b>Acheron: Persisting Tombstones in LSM Engines </b><br>
 <b>Zichen Zhu</b>, Subhadeep Sakar, Manos Athanassoulis. <i> SIGMOD Demo, 2023. </i>
