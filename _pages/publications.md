@@ -24,6 +24,7 @@ Subhadeep Sarkar, Dimitris Staratzis, <b>Zichen Zhu</b>, Manos Athanassoulis. <i
 
 <b>[Effective and Efficient Discovery of Top-k Meta Paths in Heterogeneous Information Networks ](https://ieeexplore.ieee.org/document/9253703)</b> <br>
  <b>Zichen Zhu</b>, Tsz Nam Chan, Reynold Cheng, Loc Do, Zhipeng Huang, Haoci Zhang. <i> TKDE, 2022.</i> 
+ 
 <b>[Evaluate Top-k Meta Path Queries on Large Heterogeneous Information Networks](https://ieeexplore.ieee.org/document/8595013)</b> <br>
  <b>Zichen Zhu</b>, Reynold Cheng, Loc Do, Zhipeng Huang, Haoci Zhang. <i> ICDM 2018.</i> 
 
