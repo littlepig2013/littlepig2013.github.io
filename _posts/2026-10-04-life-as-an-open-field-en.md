@@ -42,11 +42,3 @@ Of course, a life ends. Time and energy have limits. I cannot learn every instru
 What feels boundless to me is the impossibility of drawing a line in advance and saying that nothing beyond it could be worth experiencing. Leaving much unexplored does not take meaning away from the ground we have crossed. A person can live deeply within a small corner of the field. They can also stop for a while. There is room for these different ways of moving through it.
 
 That is also what I mean when I say that growth has no final endpoint. We often associate growth with greater skill, greater excellence, or becoming more like an ideal version of ourselves. But living can also change our judgments, loosen our certainties, and teach us our limits. One person travels farther; another comes to understand that they no longer need to keep chasing. Some changes cannot yet be called gains or losses, although they have already become part of the person.
-
-I think of growth as this continuing process of taking shape. As long as someone is still experiencing life and can still be affected by it, a sentence, an identity, or an achievement at a particular moment can hardly give a complete account of them. We can know a person without deciding that they are finished. We can allow ourselves the same latitude.
-
-Returning to our imagined person, perhaps what they want tomorrow is something very small. We cannot know it for them today. That part which cannot be known in advance is precisely what makes me feel that tomorrow is still worth arriving at.
-
-So I say: life is like an open field. Its possibilities have no fixed boundary, and we never finish becoming.
-
-This is how I understand my own life for now. What I may understand later will have to wait for the life still ahead of me.
