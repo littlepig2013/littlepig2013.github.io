@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.url != '/' %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | escape }}">
+  <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/images/Zichen Zhu.png' | absolute_url }}">
+  <link rel="icon" href="{{ '/assets/images/monogram.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/personal.css' | relative_url }}">
+  {% feed_meta %}
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="{{ '/' | relative_url }}">Zichen Zhu<span>朱子晨</span></a>
+  <nav aria-label="Main navigation">{% for item in site.data.navigation.main %}<a href="{{ item.url | relative_url }}" {% if page.url == item.url or page.section == item.title %}aria-current="page"{% endif %}>{{ item.title }}</a>{% endfor %}</nav>
+</div></header>
+<main id="main" class="site-main {% if page.home %}home{% else %}interior{% endif %}">
+{% unless page.home %}<header class="page-heading"><p class="eyebrow">{{ page.eyebrow | default: 'A corner of my world' }}</p><h1>{{ page.title }}</h1>{% if page.subtitle %}<p class="lede">{{ page.subtitle }}</p>{% endif %}{% if page.date %}<p class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>{% for tag in page.tags %}<span>{{ tag }}</span>{% endfor %}</p>{% endif %}</header>{% endunless %}
+<div class="{% if page.date %}prose{% endif %}">{{ content }}</div>
+{% if page.comments %}{% include personal-comments.html %}{% endif %}
+</main>
+<footer class="site-footer"><div><a class="brand" href="{{ '/' | relative_url }}">Zichen Zhu</a><p>Data systems. Dance floors. A few notes in between.</p></div><div class="footer-links"><a href="https://github.com/littlepig2013">GitHub ↗</a><a href="https://scholar.google.com/citations?user=toVblz0AAAAJ">Scholar ↗</a><a href="mailto:zczhu@bu.edu">Say hello ↗</a><a href="{{ '/feed.xml' | relative_url }}">RSS ↗</a></div><small>© {{ 'now' | date: '%Y' }} Zichen Zhu</small></footer>
+</body></html>
