@@ -50,7 +50,7 @@ Stratos Idreos, Niv Dayan, Wilson Qin, Mali Akmanalp, Sophie Hilgard, Andrew Ros
 <h2> <i> Workshop/Demo</i></h2>
 
 <b>[KVBench: A Key-Value Benchmarking Suite](https://doi.org/10.1145/3662165.3662765)</b><br>
-<b>Zichen Zhu</b>, Subhadeep Sarkar, Manos Athanassoulis, Stratos Idreos. <i>DBTest, 2024.</i>
+<b>Zichen Zhu</b>, Arpita Saha, Manos Athanassoulis, Subhadeep Sarkar. <i>DBTest, 2024.</i>
 
 <b>[SHaMBa: Reducing Bloom Filter Overhead in LSM Trees](https://ceur-ws.org/Vol-3452/paper5.pdf)</b><br>
 <b>Zichen Zhu</b> <i> VLDB PhD Workshop, 2023. </i>
