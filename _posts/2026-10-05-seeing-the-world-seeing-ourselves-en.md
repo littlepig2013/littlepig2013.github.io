@@ -13,12 +13,12 @@ excerpt: "Perhaps seeing more of the world also means meeting a part of ourselve
 
 <p class="meta"><a href="{{ '/journal/seeing-the-world-seeing-ourselves/' | relative_url }}" lang="zh-CN" hreflang="zh-CN">阅读中文版 →</a><span>English</span></p>
 
-[Liu Rushi](https://www.gushiwen.cn/authorv_6724878bcb31.aspx) lived through poverty, displacement, and the transition from the Ming to the Qing dynasty. Sold as a child, she later became known for her poetry, married the scholar Qian Qianyi, and left collections including *Poems from the Lake* and *Poems of the Wuyin Year*. Accounts of her often begin with her circumstances, marriage, or moral courage. What particularly draws me is the origin of her name. “Rushi” comes from a poem by Xin Qiji:
+During the transition from the Ming to the Qing dynasty, eight courtesans celebrated for their artistic talents along Nanjing’s Qinhuai River came to be known as the [Eight Beauties of Qinhuai](https://en.wikipedia.org/wiki/Eight_Beauties_of_Qinhuai). Liu Rushi is often regarded as foremost among them. Later accounts frequently turn to her circumstances, marriage, or moral courage. What particularly draws me is the origin of her name. “Rushi” comes from two lines by Xin Qiji:
 
 > I find the green mountains so lovely;
 > I imagine they would see me in the same way.
 
-The lines appear in his [*He Xin Lang*, beginning “How greatly I have aged”](https://www.gushiwen.cn/shiwenv_098e88b62d38.aspx). Reflecting on age and the dwindling company of old friends, he turns to the mountains for companionship. They say nothing, yet he imagines that they look back and understand him. In Liu Rushi’s choice of name, I like to hear an affirmation: even when circumstances are beyond her choosing, there remains a self she can recognize and claim. That is the feeling her name gives me.
+Reflecting on age and the dwindling company of old friends, Xin Qiji turns to the mountains for companionship. They say nothing, yet he imagines that they look back and understand him.
 
 I also wonder what happens in the simple act of looking at a mountain.
 
@@ -29,6 +29,8 @@ Calling the mountain lovely already brings my own sensibility into the encounter
 This gives me another way to understand the Chinese expression *jian shìmiàn*: to see more of the world, to become acquainted with life beyond what one already knows.
 
 We often use it to describe someone who has traveled widely or experienced much. Those experiences matter. Unfamiliar surroundings interrupt our habits and introduce people and situations we might otherwise never encounter. But if distance traveled were our only measure, when would we have seen enough? Any person’s itinerary covers only a small fraction of the world.
+
+Online, I also encounter attempts to divide “seeing the world” into its production and consumption sides: seeing how things are made, or experiencing how they are consumed. Certain places or levels of access seem to become prerequisites for having truly seen anything. Learning about these things can certainly broaden our understanding. But using them to prescribe what counts feels too rigid to me. If those experiences reveal a previously unfamiliar part of myself, they count. If something else does, it counts too. Meeting a new part of myself is already a way of seeing more of the world.
 
 Imagine two people visiting the same place and looking at the same landscape. One finds it beautiful, perhaps takes a photograph, and moves on. The other discovers, in that moment, that something they had never cared about can move them deeply. They have traveled the same distance on a map. What the encounter leaves within them may be quite different.
 
