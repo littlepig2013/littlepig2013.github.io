@@ -325,8 +325,11 @@ compress_html:
   ignore:
     envs: development
 
-# Personal site: enable after installing https://github.com/apps/utterances
+# Giscus: complete docs/COMMENTS.md before enabling.
 personal_comments:
   enabled: false
   repository: littlepig2013/littlepig2013.github.io
-  theme: github-light
+  repository_id: MDEwOlJlcG9zaXRvcnkxMTU2Mjc1NzU=
+  category: Announcements
+  category_id: ""
+  theme: light

@@ -31,12 +31,7 @@ For an externally hosted MP4 with a stable public URL, or an intentionally small
 Use YouTube or another video host for larger videos rather than filling the Git repository.
 
 ## Activate public comments (one-time owner setup)
-1. Repository Settings → General → Features → enable **Issues**.
-2. Install https://github.com/apps/utterances and grant access only to `littlepig2013.github.io`.
-3. Set `personal_comments.enabled: true` in `_config.yml` and commit.
-4. Open a published entry, sign in with GitHub, post a comment, and verify that a matching GitHub issue is created.
-
-Comments are public, use GitHub login, and are stored in Issues. Moderate them on GitHub. Pathname mapping keeps threads stable across the github.io and zichen.me domains; avoid changing published permalinks. There are no secrets to configure. Until setup is complete, the site shows an email contact instead of a broken widget. The homepage and topic indexes do not create comment threads.
+Follow [COMMENTS.md](COMMENTS.md) to enable Discussions, install Giscus, and fill the category ID before enabling comments. The journal supports comments, replies, and reactions. Translations share their original discussion via `translation_of`. Until activation, the site shows an email fallback.
 
 ## Build
 The existing GitHub Pages/Jekyll deployment stays in place. `CNAME` remains `zichen.me`, and `_config.yml` uses `https://zichen.me` for canonical URLs. Merging the redesign PR into the configured Pages source branch will update the public site.
