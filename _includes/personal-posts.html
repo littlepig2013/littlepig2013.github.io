@@ -1,9 +1,9 @@
 {% assign count = 0 %}
 <div class="post-list">
-{% for post in site.posts %}{% if include.category == nil or post.categories contains include.category %}
+{% for post in site.posts %}{% unless post.translation_of %}{% if include.category == nil or post.categories contains include.category %}
 {% assign count = count | plus: 1 %}
 {% if include.max_posts == nil or count <= include.max_posts %}
 <a class="post-row" href="{{ post.url | relative_url }}"><div><span class="eyebrow">{{ post.categories | join: ' / ' }}</span><h3>{{ post.title | escape }}</h3><p>{{ post.excerpt | strip_html | truncate: 160 }}</p></div><span class="post-date">{{ post.date | date: '%b %Y' }} <span aria-hidden="true">↗</span></span></a>
-{% endif %}{% endif %}{% endfor %}
+{% endif %}{% endif %}{% endunless %}{% endfor %}
 </div>
 {% if count == 0 %}<div class="empty-state"><span class="small-number">Work in progress</span><h3>{{ include.empty_title | default: 'A little room for what comes next.' }}</h3><p>{{ include.empty_text | default: 'New stories will appear here as I publish them.' }}</p></div>{% endif %}
