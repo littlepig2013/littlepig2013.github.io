@@ -1,0 +1,7 @@
+# Fill one ID after uploading the video to your preferred host.
+story_of_time:
+  title: "光阴的故事 · The Story of Time"
+  youtube_id: ""
+  drive_id: ""
+  poster: /assets/images/story-of-time.jpg
+  portrait: true

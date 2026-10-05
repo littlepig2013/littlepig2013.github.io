@@ -1,5 +1,10 @@
-{% if include.youtube_id %}
-<div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/{{ include.youtube_id | escape }}" title="{{ include.title | default: page.title | escape }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+{% if include.youtube_id and include.youtube_id != '' %}
+<div class="video-frame{% if include.portrait %} video-portrait{% endif %}"><iframe src="https://www.youtube-nocookie.com/embed/{{ include.youtube_id | escape }}" title="{{ include.title | default: page.title | escape }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+{% elsif include.drive_id and include.drive_id != '' %}
+<div class="video-frame{% if include.portrait %} video-portrait{% endif %}"><iframe src="https://drive.google.com/file/d/{{ include.drive_id | escape }}/preview" title="{{ include.title | default: page.title | escape }}" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+<p class="media-caption"><a href="https://drive.google.com/file/d/{{ include.drive_id | escape }}/view" target="_blank" rel="noopener">Open video in Google Drive ↗</a></p>
 {% elsif include.src %}
-<video controls preload="metadata" {% if include.poster %}poster="{{ include.poster | relative_url }}"{% endif %}><source src="{{ include.src | relative_url }}" type="video/mp4">Your browser cannot play this video. <a href="{{ include.src | relative_url }}">Download it</a>.</video>
+<video controls playsinline preload="metadata" {% if include.poster %}poster="{{ include.poster | relative_url }}"{% endif %}><source src="{{ include.src | relative_url }}" type="video/mp4">Your browser cannot play this video. <a href="{{ include.src | relative_url }}">Download it</a>.</video>
+{% elsif include.poster %}
+<figure class="recording-preview"><img src="{{ include.poster | relative_url }}" alt="{{ include.title | default: page.title | escape }} — recording still" width="544" height="960" loading="lazy"><figcaption>视频片段 · 完整视频即将上线</figcaption></figure>
 {% endif %}
