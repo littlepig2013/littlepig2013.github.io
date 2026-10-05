@@ -39,3 +39,15 @@ The old Utterances widget was disabled, and repository Issues are currently disa
 - Check mobile layout and signed-out reading. Block the widget and check the GitHub/email fallback.
 
 These checks require owner activation. Template validation cannot verify live OAuth, app permissions, or reaction persistence.
+
+## Security hardening
+
+- `giscus.json` allows only `https://zichen.me`, `https://www.zichen.me`, and `https://littlepig2013.github.io`. This prevents unrelated sites embedding this discussion repository through Giscus; it is not access control for public GitHub discussions or DDoS protection. Do not add broad wildcard origins. Local testing can use mocked origins; add an exact temporary origin only if needed and remove it before merging.
+- The personal layout uses a Content Security Policy in a meta tag before resources. Scripts are limited to this site and the exact Giscus client path; inline scripts and `eval` are not permitted. Frames are restricted to this site, Giscus, and existing YouTube/Drive embeds. Object embeds, base-tag overrides, and HTML form submissions are blocked. Inline styles remain allowed for Giscus iframe sizing. This policy applies to the personal layout only; a meta policy cannot enforce `frame-ancestors` or all HTTP-header-only protections.
+- The Giscus client script has a pinned SHA-384 Subresource Integrity digest, checked against the official HTTPS response on 2026-10-05. CORS is supported by that endpoint. A changed client fails closed: the comment widget will stop loading until the new script has been reviewed and its digest explicitly updated. Keep the email/GitHub fallback. Never auto-refresh the digest. This pins the loader only, not the cross-origin widget, its styles, or GitHub API responses; Giscus remains a trusted service.
+- Cross-origin referrers omit article paths and query parameters. `giscus:backlink` uses the canonical original article, without OAuth callback query parameters.
+- Configuration attributes are HTML-escaped. Strict thread matching and stable translation keys avoid cross-article thread confusion.
+
+For activation, use **Only select repositories** when installing Giscus, select only this repository, and inspect the permissions shown by GitHub. Choose an Announcement category as described above. Granting access to all repositories is unnecessary. Enable GitHub account two-factor authentication if it is not already on. Moderation and rate limiting remain GitHub responsibilities; this integration does not enforce a custom daily quota or character limit.
+
+To update the loader pin: download `https://giscus.app/client.js` over HTTPS, review the change against the previously reviewed loader, compute its SHA-384 SRI digest, update only the `integrity` attribute, and run the browser checks again. If it cannot be reviewed, leave the pin unchanged and use the fallback. The current reviewed loader digest is recorded directly in `_includes/personal-comments.html`.
