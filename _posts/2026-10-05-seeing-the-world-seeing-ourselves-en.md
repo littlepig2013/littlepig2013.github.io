@@ -42,10 +42,4 @@ Of course, staying home does not automatically bring discovery. Neither does goi
 
 The world can surprise me. Because it does not entirely conform to my imagination, an encounter can reveal the limits of what I already understand and offer something beyond them. Seeing myself includes being corrected by another person and being changed by an unfamiliar experience.
 
-None of this requires an audience. I do not need to turn every moment into a vlog or explain on social media where I have been and what I have learned. Some changes are small and difficult to articulate. They may simply make the next song I hear, the next person I meet, or the next quiet moment with myself feel slightly different. Unrecorded and unseen by others, they have still happened.
-
-I will never see the whole world in its physical extent. But whenever I discover a part of myself I did not previously know, the world I can understand and feel becomes a little larger.
-
-Returning to Xin Qiji’s lines, I think about this possibility of recognition between a person and the world. The mountain lets me see myself. I bring my own experiences to it, giving this particular encounter its meaning.
-
-So I am in no hurry to ask where the next mountain is. I am more curious about who I might discover myself to be the next time I meet the world.
+None of this requires an audience. I do not need to turn every moment into a vlog or explain on social media where I have been and what I have learned. Some changes are small and difficult to articulate. They may simply make the next song I hear, the next person I meet, or the next quiet moment with myself feel slightly different.
