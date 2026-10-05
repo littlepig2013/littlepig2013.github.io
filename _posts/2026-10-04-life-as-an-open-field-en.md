@@ -27,7 +27,7 @@ What will they do when they wake tomorrow morning?
 
 They can rest. They can enjoy what they have. There is nothing wrong with that. But suppose something they never considered begins to interest them: an unfamiliar sound, a new question, a way of living they had previously overlooked. It was absent from their original wishes. It cannot make their already complete record of achievement any more complete. Still, they want to move toward it. Where has that wish come from?
 
-We have arranged the outcomes of their life. We have no way to arrange in advance who they will become upon reaching them. The person at the destination has experiences that the person setting out did not have. They may now care about things they could not once imagine. Wishes change as people do. To design a final destination for a life, perhaps we would also have to require that its owner never change again.
+We have arranged the outcomes of their life. We have no way to arrange in advance who they will become upon reaching them. The person at the destination has experiences that the person setting out did not have. They may now care about things they could not once imagine. Wishes change as people do. Having everything we once wanted may still leave us wondering how we want to live now.
 
 This makes me wonder whether what we have accomplished is enough to account for what we have lived.
 
@@ -50,7 +50,3 @@ Returning to our imagined person, perhaps what they want tomorrow is something v
 So I say: life is like an open field. Its possibilities have no fixed boundary, and we never finish becoming.
 
 This is how I understand my own life for now. What I may understand later will have to wait for the life still ahead of me.
-
----
-
-<small>The reference to *How the Steel Was Tempered* is a paraphrase, rather than a quotation from an English edition. See the [publisher’s introduction in Chinese](https://sdwypress.com/document/227.html).</small>
