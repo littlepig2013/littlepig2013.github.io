@@ -1,8 +1,9 @@
 ---
-layout: archive
+layout: personal
 title: "Publications"
 permalink: /publications/
-author_profile: true
+section: Research
+eyebrow: Papers & projects
 ---
 
 <h2> <i>Conference/Journal Papers </i></h2>
@@ -19,8 +20,8 @@ Siqiang Luo\*, <b>Zichen Zhu\*</b>, Xiaokui Xiao, Yin Yang, Chunbo Li, Ben Kao (
 <b>Building Deletion-Compliant Data Systems</b><br>
 Manos Athanassoulis, Subhadeep Sarkar, Tarikul Islam Papon, <b>Zichen Zhu</b>, Dimitris Staratzis. <i> IEEE Data Engineering Bulletin (DEBull), 2022. </i>
 
-<b>[Constructing and Analyzing the LSM Compaction Design Space](http://vldb.org/pvldb/vol14/p2216-sarkar.pdf")</b><br>
-Subhadeep Sarkar, Dimitris Staratzis, <b>Zichen Zhu</b>, Manos Athanassoulis. <i> VLDB, 2020. </i>
+<b>[Constructing and Analyzing the LSM Compaction Design Space](http://vldb.org/pvldb/vol14/p2216-sarkar.pdf)</b><br>
+Subhadeep Sarkar, Dimitris Staratzis, <b>Zichen Zhu</b>, Manos Athanassoulis. <i> VLDB, 2021. </i>
 
 <b>[Effective and Efficient Discovery of Top-k Meta Paths in Heterogeneous Information Networks ](https://ieeexplore.ieee.org/document/9253703)</b> <br>
  <b>Zichen Zhu</b>, Tsz Nam Chan, Reynold Cheng, Loc Do, Zhipeng Huang, Haoci Zhang. <i> TKDE, 2022.</i> 
@@ -35,7 +36,7 @@ Stratos Idreos, Niv Dayan, Wilson Qin, Mali Akmanalp, Sophie Hilgard, Andrew Ros
 
 <h2> <i> Workshop/Demo</i></h2>
 
-<b>[SHaMBa: Reducing Bloom Filter Overhead in LSM Trees](https://ceur-ws.org/Vol-3452/paper5.pdf")</b><br>
+<b>[SHaMBa: Reducing Bloom Filter Overhead in LSM Trees](https://ceur-ws.org/Vol-3452/paper5.pdf)</b><br>
 <b>Zichen Zhu</b> <i> VLDB PhD Workshop, 2023. </i>
 
 <b>Acheron: Persisting Tombstones in LSM Engines </b><br>

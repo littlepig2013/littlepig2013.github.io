@@ -10,10 +10,10 @@ locale                   : "en-US"
 title                    : "Zichen Zhu"
 title_separator          : "-"
 name                     : &name "Zichen Zhu"
-description              : &description "PhD Candidate in MiDAS of Boston University."
-url                      : https://littlepig2013.github.io
+description              : &description "Software engineer, data systems researcher, ballroom dancer, and musician."
+url                      : https://zichen.me
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "littlepig2013.github.io"
+repository               : "littlepig2013/littlepig2013.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -71,7 +71,7 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
+  provider               : false # false (default), "google", "google-universal", "custom"
   google:
     tracking_id          :
 
@@ -80,8 +80,8 @@ analytics:
 author:
   name             : "Zichen Zhu"
   avatar           : "Zichen Zhu.png"
-  bio              : "PhD candidate in MiDAS of Boston University"
-  location         : "Boston"
+  bio              : "Software engineer at Google · Data systems · Dance & music"
+  location         : "Kirkland, WA"
   employer         :
   googlescholar    : 
   email            :
@@ -118,6 +118,27 @@ include:
   - _pages
   - files
 exclude:
+  - docs
+  - _portfolio
+  - _talks
+  - _pages/collection-archive.html
+  - _pages/page-archive.html
+  - _pages/tag-archive.html
+  - _pages/category-archive.html
+  - _pages/talkmap.html
+  - _teaching
+  - _posts/2012-08-14-blog-post-1.md
+  - _posts/2013-08-14-blog-post-2.md
+  - _posts/2014-08-14-blog-post-3.md
+  - _posts/2015-08-14-blog-post-4.md
+  - _pages/non-menu-page.md
+  - _pages/archive-layout-with-content.md
+  - _pages/markdown.md
+  - _pages/terms.md
+  - markdown_generator
+  - talkmap
+  - talkmap.py
+  - talkmap.ipynb
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
@@ -190,7 +211,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
+      layout: personal
       author_profile: true
       read_time: true
       comments: true
@@ -201,14 +222,14 @@ defaults:
       path: ""
       type: pages
     values:
-      layout: single
+      layout: personal
       author_profile: true
   # _teaching
   - scope:
       path: ""
       type: teaching
     values:
-      layout: single
+      layout: personal
       author_profile: true
       share: true
       comments: true
@@ -217,7 +238,7 @@ defaults:
       path: ""
       type: publications
     values:
-      layout: single
+      layout: personal
       author_profile: true
       share: true
       comments: true
@@ -226,7 +247,7 @@ defaults:
       path: ""
       type: portfolio
     values:
-      layout: single
+      layout: personal
       author_profile: true
       share: true
       comment: true
@@ -235,7 +256,7 @@ defaults:
       path: ""
       type: talks
     values:
-      layout: talk
+      layout: personal
       author_profile: true
       share: true
 
@@ -303,3 +324,9 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+# Personal site: enable after installing https://github.com/apps/utterances
+personal_comments:
+  enabled: false
+  repository: littlepig2013/littlepig2013.github.io
+  theme: github-light

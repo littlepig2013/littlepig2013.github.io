@@ -1,0 +1,10 @@
+<section class="comments-section" aria-labelledby="comments-title">
+<h2 id="comments-title">Let’s talk</h2>
+{% if site.personal_comments.enabled %}
+<p class="muted">Comments are public and hosted on GitHub. Sign in with GitHub to join the conversation.</p>
+<script src="https://utteranc.es/client.js" repo="{{ site.personal_comments.repository }}" issue-term="pathname" theme="{{ site.personal_comments.theme }}" crossorigin="anonymous" async></script>
+<p class="muted">If comments do not load, <a href="https://github.com/{{ site.personal_comments.repository }}/issues">visit the discussions on GitHub</a> or <a href="mailto:zczhu@bu.edu">email me</a>.</p>
+{% else %}
+<p class="muted">Have a thought to share? <a href="mailto:zczhu@bu.edu">Send me a note</a>. On-site comments are coming soon.</p>
+{% endif %}
+</section>

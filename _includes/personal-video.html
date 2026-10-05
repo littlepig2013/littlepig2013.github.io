@@ -1,0 +1,5 @@
+{% if include.youtube_id %}
+<div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/{{ include.youtube_id | escape }}" title="{{ include.title | default: page.title | escape }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+{% elsif include.src %}
+<video controls preload="metadata" {% if include.poster %}poster="{{ include.poster | relative_url }}"{% endif %}><source src="{{ include.src | relative_url }}" type="video/mp4">Your browser cannot play this video. <a href="{{ include.src | relative_url }}">Download it</a>.</video>
+{% endif %}
