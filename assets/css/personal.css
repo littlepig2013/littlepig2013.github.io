@@ -5,3 +5,5 @@
 .video-frame.video-portrait{aspect-ratio:9/16;max-width:430px;margin:30px auto}.recording-preview{max-width:430px;margin:30px auto}.recording-preview img{display:block;width:100%;border-radius:5px}.recording-preview figcaption,.media-caption{font-size:12px;color:var(--muted);text-align:center;margin-top:12px}
 
 .comments-section p{font-size:14px;line-height:1.8}.comments-section .giscus{margin:24px 0;min-width:0}.comments-section .giscus-frame{width:100%}.comments-fallback{overflow-wrap:anywhere}
+
+.comment-translator{margin:20px 0;border:1px solid var(--line);border-radius:6px;padding:14px 18px;font-size:14px}.comment-translator summary{cursor:pointer}.comment-translator label{display:block;margin:16px 0 8px}.comment-translator textarea{width:100%;font:16px/1.6 var(--sans);padding:10px;border:1px solid var(--line);border-radius:4px;background:var(--paper);color:var(--ink)}.comment-translator a[aria-disabled="true"]{opacity:.5;pointer-events:none}.comment-translator a:focus-visible,.comment-translator textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}

@@ -51,3 +51,9 @@ These checks require owner activation. Template validation cannot verify live OA
 For activation, use **Only select repositories** when installing Giscus, select only this repository, and inspect the permissions shown by GitHub. Choose an Announcement category as described above. Granting access to all repositories is unnecessary. Enable GitHub account two-factor authentication if it is not already on. Moderation and rate limiting remain GitHub responsibilities; this integration does not enforce a custom daily quota or character limit.
 
 To update the loader pin: download `https://giscus.app/client.js` over HTTPS, review the change against the previously reviewed loader, compute its SHA-384 SRI digest, update only the `integrity` attribute, and run the browser checks again. If it cannot be reviewed, leave the pin unchanged and use the fallback. The current reviewed loader digest is recorded directly in `_includes/personal-comments.html`.
+
+## Comment translation
+
+The bilingual helper is beside the widget. Copy and paste a comment, then explicitly open Google Translate in a new tab. The target language follows the article (Chinese or English). No translation request happens on typing; clicking sends the pasted text to Google in the URL. Do not paste private information. Empty input cannot open the link. The 5,000-character helper input cap is only for this translation tool, not a comment-posting limit.
+
+Cross-origin iframe isolation prevents the site from reading Giscus comments or injecting per-comment buttons. This helper does not automatically translate the thread or display results inline, and does not alter GitHub comment data. Website-owned reminder and fallback text follows page language; Giscus controls use its own data-lang setting.
