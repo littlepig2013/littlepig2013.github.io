@@ -2,10 +2,13 @@
 <html lang="{{ page.lang | default: 'en' }}">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://giscus.app/client.js; style-src 'self' https://giscus.app 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self'; frame-src 'self' https://giscus.app https://www.youtube-nocookie.com https://drive.google.com; media-src 'self' https:; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.url != '/' %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | escape }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {% if page.comments %}<meta name="giscus:backlink" content="{{ page.comment_thread | default: page.translation_of | default: page.url | absolute_url | escape }}">{% endif %}
   <meta property="og:title" content="{{ page.title | escape }}">
   <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | escape }}">
   <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">

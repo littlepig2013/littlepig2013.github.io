@@ -1,10 +1,52 @@
-<section class="comments-section" aria-labelledby="comments-title">
-<h2 id="comments-title">Let’s talk</h2>
-{% if site.personal_comments.enabled %}
-<p class="muted">Comments are public and hosted on GitHub. Sign in with GitHub to join the conversation.</p>
-<script src="https://utteranc.es/client.js" repo="{{ site.personal_comments.repository }}" issue-term="pathname" theme="{{ site.personal_comments.theme }}" crossorigin="anonymous" async></script>
-<p class="muted">If comments do not load, <a href="https://github.com/{{ site.personal_comments.repository }}/issues">visit the discussions on GitHub</a> or <a href="mailto:zczhu@bu.edu">email me</a>.</p>
+{% assign comment_thread = page.comment_thread | default: page.translation_of | default: page.url %}
+{% assign settings = site.personal_comments %}
+<section class="comments-section" id="comments" aria-labelledby="comments-title">
+{% if page.lang == 'zh-CN' %}<h2 id="comments-title">聊一聊</h2>{% else %}<h2 id="comments-title">Let’s talk</h2>{% endif %}
+{% if settings.enabled and settings.repository_id != empty and settings.repository_id != nil and settings.category_id != empty and settings.category_id != nil %}
+{% if page.lang == 'zh-CN' %}
+<p class="muted">可以留言、回复和点赞。参与需要登录 GitHub；评论公开，中英文版共用同一条讨论。</p>
 {% else %}
-<p class="muted">Have a thought to share? <a href="mailto:zczhu@bu.edu">Send me a note</a>. On-site comments are coming soon.</p>
+<p class="muted">Leave a comment, reply, or reaction. Sign in with GitHub to participate. Comments are public and shared across translations.</p>
+{% endif %}
+<details class="comment-translator" data-comment-translator data-target="{% if page.lang == 'zh-CN' %}zh-CN{% else %}en{% endif %}">
+  <summary>{% if page.lang == 'zh-CN' %}翻译评论{% else %}Translate a comment{% endif %}</summary>
+  <label for="comment-translation-text">{% if page.lang == 'zh-CN' %}复制评论并粘贴到这里{% else %}Copy a comment and paste it here{% endif %}</label>
+  <textarea id="comment-translation-text" rows="3" maxlength="5000" data-translation-text></textarea>
+  <p class="muted">{% if page.lang == 'zh-CN' %}点击后在 Google 翻译中打开，目标语言为中文；粘贴的文字会发送给 Google。{% else %}Opens Google Translate in English. The pasted text will be sent to Google when you click.{% endif %}</p>
+  <a data-translation-link aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer">{% if page.lang == 'zh-CN' %}打开 Google 翻译{% else %}Open Google Translate{% endif %}</a>
+</details>
+<script src="{{ '/assets/js/comment-translate.js' | relative_url }}" defer></script>
+<div class="giscus"></div>
+<script src="https://giscus.app/client.js"
+  data-repo="{{ settings.repository | escape }}"
+  data-repo-id="{{ settings.repository_id | escape }}"
+  data-category="{{ settings.category | escape }}"
+  data-category-id="{{ settings.category_id | escape }}"
+  data-mapping="specific"
+  data-term="{{ comment_thread | escape }}"
+  data-strict="1"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="{{ settings.theme | default: 'light' | escape }}"
+  data-lang="{{ page.lang | default: 'en' | escape }}"
+  data-loading="lazy"
+  integrity="sha384-UwLZGbJGvkTzz0719+xEzUm/idqwzs0yZN8aB9Se5vUXHbyRyDWw9yqZTIsOsJ7x"
+  referrerpolicy="strict-origin"
+  crossorigin="anonymous"
+  async></script>
+<p class="comments-fallback muted">
+{% if page.lang == 'zh-CN' %}
+如果评论没有加载，可以<a href="https://github.com/{{ settings.repository | escape }}/discussions">在 GitHub 查看讨论</a>，或<a href="mailto:zczhu@bu.edu">给我写信</a>。
+{% else %}
+If comments do not load, <a href="https://github.com/{{ settings.repository | escape }}/discussions">visit the discussions on GitHub</a> or <a href="mailto:zczhu@bu.edu">email me</a>.
+{% endif %}
+</p>
+{% else %}
+{% if page.lang == 'zh-CN' %}
+<p class="muted">评论区尚未开放。有想法的话，欢迎<a href="mailto:zczhu@bu.edu">给我写信</a>。</p>
+{% else %}
+<p class="muted">Comments are not open yet. Have a thought to share? <a href="mailto:zczhu@bu.edu">Send me a note</a>.</p>
+{% endif %}
 {% endif %}
 </section>
