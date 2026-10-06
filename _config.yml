@@ -327,9 +327,9 @@ compress_html:
 
 # Giscus: complete docs/COMMENTS.md before enabling.
 personal_comments:
-  enabled: false
+  enabled: true
   repository: littlepig2013/littlepig2013.github.io
   repository_id: MDEwOlJlcG9zaXRvcnkxMTU2Mjc1NzU=
   category: Announcements
-  category_id: ""
+  category_id: DIC_kwDOBuRWN84DHJLM
   theme: light
