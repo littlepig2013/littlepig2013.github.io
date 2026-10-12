@@ -1,0 +1,7 @@
+{
+  "name": "zichen-private-space",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test test/*.test.js", "dev": "npx wrangler dev", "deploy": "npx wrangler deploy" },
+  "engines": { "node": ">=22.13" }
+}

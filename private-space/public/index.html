@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>私人空间 · Zichen Zhu</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<header><a class="brand" href="https://zichen.me">Zichen Zhu <small>朱子晨</small></a><div class="actions"><label>文章语言 <select id="language"><option value="zh">中文</option><option value="en">English</option></select></label><a href="/cdn-cgi/access/logout">退出</a></div></header>
+<main>
+  <p class="eyebrow">A corner of my world</p><h1>私人空间</h1><p class="lede">Always curious. Always in motion.</p>
+  <p id="identity"></p><p id="status" role="status" aria-live="polite">正在验证访问权限…</p>
+  <nav id="navigation" aria-label="私人空间栏目" hidden></nav>
+  <section id="content"></section>
+  <section id="friends" hidden><h2>朋友管理</h2><p>添加邮箱后，把此空间的链接发给朋友。对方须验证该邮箱；系统不会自动发送邀请。</p><form id="add-friend" class="panel"><label>称呼<input name="name" maxlength="80" required></label><label>邮箱<input name="email" type="email" required></label><button type="submit">添加朋友</button></form><div id="friends-list"></div></section>
+  <section id="articles" hidden><div class="actions"><h2>文章与权限</h2><button id="new-post" type="button">写一篇</button></div><div id="admin-posts"></div></section>
+  <section id="preview" hidden><h2>读者预览</h2><label>查看身份<select id="preview-person"></select></label><div id="preview-content"></div></section>
+  <section id="editor" class="panel" hidden><h2>编辑文章</h2><form id="post-form">
+    <div class="grid"><label>文章 ID<input name="id" pattern="[a-z0-9][a-z0-9-]{0,79}" maxlength="80" required placeholder="my-first-journal"></label><label>栏目<select name="section"><option value="journal">Journal</option><option value="music">Music</option><option value="dance">Ballroom</option></select></label></div>
+    <label>可见范围<select name="visibility"></select></label><fieldset id="reader-choices" hidden><legend>指定朋友</legend><div id="reader-checkboxes"></div></fieldset>
+    <label>中文标题<input name="zh-title" maxlength="200"></label><label>中文正文<textarea name="zh-body" rows="10" maxlength="200000"></textarea></label>
+    <label>English title<input name="en-title" maxlength="200"></label><label>English text<textarea name="en-body" rows="10" maxlength="200000"></textarea></label>
+    <p>至少填写一种语言的标题。正文以纯文本显示；中英文版本共用权限。</p><div class="actions"><button type="submit">保存文章与权限</button><button id="close-editor" class="secondary" type="button">关闭</button></div>
+  </form><div id="upload-panel" hidden><hr><h3>添加私密媒体</h3><form id="media-form"><label>音频、视频或图片（最大 50 MiB）<input id="media-file" type="file" accept="video/mp4,audio/mpeg,audio/mp4,audio/wav,image/jpeg,image/png,image/webp" required></label><button type="submit">上传到这篇文章</button></form><p>媒体与文章共用权限。请勿用公开视频链接代替私密文件。</p></div></section>
+</main><footer>Data systems. Dance floors. A few notes in between.</footer>
+</body></html>
