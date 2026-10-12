@@ -19,7 +19,7 @@
   <section id="articles" hidden><div class="actions"><h2>文章与权限</h2><button id="new-post" type="button">写一篇</button></div><div id="admin-posts"></div></section>
   <section id="preview" hidden><h2>读者预览</h2><label>查看身份<select id="preview-person"></select></label><div id="preview-content"></div></section>
   <section id="editor" class="panel" hidden><h2>编辑文章</h2><form id="post-form">
-    <div class="grid"><label>文章 ID<input name="id" pattern="[a-z0-9][a-z0-9-]{0,79}" maxlength="80" required placeholder="my-first-journal"></label><label>栏目<select name="section"><option value="journal">Journal</option><option value="music">Music</option><option value="dance">Ballroom</option></select></label></div>
+    <div class="grid"><label>文章 ID<input name="id" pattern="[a-z0-9][a-z0-9\-]{0,79}" maxlength="80" required placeholder="my-first-journal"></label><label>栏目<select name="section"><option value="journal">Journal</option><option value="music">Music</option><option value="dance">Ballroom</option></select></label></div>
     <label>可见范围<select name="visibility"></select></label><fieldset id="reader-choices" hidden><legend>指定朋友</legend><div id="reader-checkboxes"></div></fieldset>
     <label>中文标题<input name="zh-title" maxlength="200"></label><label>中文正文<textarea name="zh-body" rows="10" maxlength="200000"></textarea></label>
     <label>English title<input name="en-title" maxlength="200"></label><label>English text<textarea name="en-body" rows="10" maxlength="200000"></textarea></label>
