@@ -19,11 +19,11 @@
   <section id="articles" hidden><div class="actions"><h2>文章与权限</h2><button id="new-post" type="button">写一篇</button></div><div id="admin-posts"></div></section>
   <section id="preview" hidden><h2>读者预览</h2><label>查看身份<select id="preview-person"></select></label><div id="preview-content"></div></section>
   <section id="editor" class="panel" hidden><h2>编辑文章</h2><form id="post-form">
-    <div class="grid"><label>文章 ID<input name="id" pattern="[a-z0-9][a-z0-9\-]{0,79}" maxlength="80" required placeholder="my-first-journal"></label><label>栏目<select name="section"><option value="journal">Journal</option><option value="music">Music</option><option value="dance">Ballroom</option></select></label></div>
+    <div class="grid"><label>文章 ID（网址标识）<input name="id" pattern="[a-z0-9][a-z0-9\-]{0,79}" maxlength="80" required placeholder="my-first-journal" aria-describedby="article-id-help"><small id="article-id-help">只用小写英文字母、数字和短横线，如 my-first-journal；中文名字填在「中文标题」。</small></label><label>栏目<select name="section"><option value="journal">Journal</option><option value="music">Music</option><option value="dance">Ballroom</option></select></label></div>
     <label>可见范围<select name="visibility"></select></label><fieldset id="reader-choices" hidden><legend>指定朋友</legend><div id="reader-checkboxes"></div></fieldset>
     <label>中文标题<input name="zh-title" maxlength="200"></label><label>中文正文<textarea name="zh-body" rows="10" maxlength="200000"></textarea></label>
     <label>English title<input name="en-title" maxlength="200"></label><label>English text<textarea name="en-body" rows="10" maxlength="200000"></textarea></label>
-    <p>至少填写一种语言的标题。正文以纯文本显示；中英文版本共用权限。</p><div class="actions"><button type="submit">保存文章与权限</button><button id="close-editor" class="secondary" type="button">关闭</button></div>
+    <p>至少填写一种语言的标题。正文以纯文本显示；中英文版本共用权限。</p><p id="editor-status" class="save-feedback" role="status" aria-live="polite"></p><div class="actions"><button type="submit">保存文章与权限</button><button id="close-editor" class="secondary" type="button">关闭</button></div>
   </form><div id="upload-panel" hidden><hr><h3>添加私密媒体</h3><form id="media-form"><label>音频、视频或图片（最大 50 MiB）<input id="media-file" type="file" accept="video/mp4,audio/mpeg,audio/mp4,audio/wav,image/jpeg,image/png,image/webp" required></label><button type="submit">上传到这篇文章</button></form><p>媒体与文章共用权限。请勿用公开视频链接代替私密文件。</p></div></section>
 </main><footer>Data systems. Dance floors. A few notes in between.</footer>
 </body></html>

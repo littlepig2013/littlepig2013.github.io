@@ -4,7 +4,17 @@ const names = { music: 'Music', dance: 'Ballroom', journal: 'Journal', friends: 
 const policies = { self: '仅自己', section: '该栏目的朋友', selected: '指定朋友', circle: 'Journal 圈' };
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
 const variant = post => post.variants[$('#language').value] || Object.values(post.variants)[0];
-function status(text, error = false) { $('#status').textContent = text; $('#status').classList.toggle('error', error); }
+function status(text, error = false) {
+  for (const selector of ['#status', '#editor-status']) {
+    const node = $(selector);
+    node.textContent = text;
+    node.classList.toggle('error', error);
+  }
+  if (text) {
+    const node = $('#editor').hidden ? $('#status') : $('#editor-status');
+    node.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+  }
+}
 async function api(path, options = {}) {
   const response = await fetch(path, { credentials: 'same-origin', cache: 'no-store', ...options });
   if (response.redirected || !response.headers.get('Content-Type')?.includes('application/json')) throw new Error('登录已过期，请刷新页面重新登录。');
@@ -13,12 +23,21 @@ async function api(path, options = {}) {
   return data;
 }
 const put = (path, value) => api(path, { method: 'PUT', headers: { 'Content-Type':'application/json' }, body: JSON.stringify(value) });
-async function action(callback) {
+async function action(callback, { button = null, pending = '处理中…' } = {}) {
   if (state.busy) return;
   state.busy = true;
-  document.querySelectorAll('button').forEach(b => b.disabled = true);
+  const label = button?.textContent;
+  if (button) button.textContent = pending;
+  const controls = [...document.querySelectorAll('button, input, select, textarea')];
+  const disabled = controls.map(control => control.disabled);
+  controls.forEach(control => control.disabled = true);
   try { await callback(); } catch (error) { status(error.message, true); }
-  finally { state.busy = false; document.querySelectorAll('button').forEach(b => b.disabled = false); }
+  finally {
+    state.busy = false;
+    controls.forEach((control, i) => control.disabled = disabled[i]);
+    $('#post-form').elements.namedItem('id').disabled = !!state.editing;
+    if (button) button.textContent = label;
+  }
 }
 async function load() {
   state.me = await api('/api/me');
@@ -89,7 +108,7 @@ function setVisibilityOptions(section, selected = 'self') {
   $('#post-form').elements.visibility.innerHTML = choices.map(v => `<option value="${v}" ${v === selected ? 'selected' : ''}>${policies[v]}</option>`).join('');
   $('#reader-choices').hidden = $('#post-form').elements.visibility.value !== 'selected';
 }
-function edit(post = null) {
+function edit(post = null, { scroll = true } = {}) {
   state.editing = post?.id || null;
   const form = $('#post-form'); form.reset();
   form.elements.id.disabled = !!post;
@@ -102,7 +121,8 @@ function edit(post = null) {
   }
   $('#reader-checkboxes').innerHTML = state.friends.filter(f => f.active).map(f => `<label><input type="checkbox" name="reader" value="${escape(f.email)}" ${post?.readers.includes(f.email) ? 'checked' : ''}> ${escape(f.name)}</label>`).join('') || '<p>先添加朋友，再设置逐篇授权。</p>';
   $('#editor').hidden = false; $('#upload-panel').hidden = !post;
-  $('#editor').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block:'start' });
+  $('#editor-status').textContent = '';
+  if (scroll) $('#editor').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block:'start' });
 }
 document.addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b || state.busy) return;
@@ -130,16 +150,18 @@ document.addEventListener('submit', e => {
     await load(); status('朋友权限已保存。');
   });
   if (form.getAttribute('id') === 'post-form') action(async () => {
-    const id = state.editing || form.elements.id.value;
+    const id = state.editing || form.elements.namedItem('id').value.trim();
+    if (!/^[a-z0-9][a-z0-9-]{0,79}$/.test(id)) throw new Error('文章 ID 只能使用小写字母、数字和短横线，例如 test-journal。');
     const variants = {};
     for (const lang of ['zh','en']) {
       const title = form.elements[`${lang}-title`].value.trim(), body = form.elements[`${lang}-body`].value;
       if (!title && body) throw new Error('有正文的语言版本需要填写标题。');
       if (title) variants[lang] = { title,body };
     }
+    if (!Object.keys(variants).length) throw new Error('请至少填写中文标题或 English title。');
     await put(`/api/admin/posts/${encodeURIComponent(id)}`, { section:form.elements.section.value, visibility:form.elements.visibility.value, variants, readers:[...form.querySelectorAll('[name=reader]:checked')].map(x => x.value) });
-    await load(); edit(state.adminPosts.find(p => p.id === id)); status('文章与权限已保存。');
-  });
+    await load(); edit(state.adminPosts.find(p => p.id === id), { scroll: false }); status('文章与权限已保存。可以到相应栏目阅读。');
+  }, { button: e.submitter, pending: '正在保存…' });
   if (form.getAttribute('id') === 'media-form') action(async () => {
     const file = $('#media-file').files[0];
     if (!file || !state.editing) throw new Error('请先保存文章，再选择文件。');
@@ -149,8 +171,8 @@ document.addEventListener('submit', e => {
     const id = state.editing;
     const name = `${crypto.randomUUID()}.${extension}`;
     await api(`/api/admin/posts/${id}/media/${name}`, { method:'PUT',headers:{'Content-Type':file.type},body:file });
-    await load(); edit(state.adminPosts.find(p => p.id === id)); status('媒体已上传，与文章共用访问权限。');
-  });
+    await load(); edit(state.adminPosts.find(p => p.id === id), { scroll: false }); status('媒体已上传，与文章共用访问权限。');
+  }, { button: e.submitter, pending: '正在上传…' });
 });
 $('#post-form').elements.section.addEventListener('change', e => setVisibilityOptions(e.target.value));
 $('#post-form').elements.visibility.addEventListener('change', e => $('#reader-choices').hidden = e.target.value !== 'selected');
