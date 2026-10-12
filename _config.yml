@@ -118,6 +118,7 @@ include:
   - _pages
   - files
 exclude:
+  - private-space
   - docs
   - _portfolio
   - _talks
@@ -333,3 +334,4 @@ personal_comments:
   category: Announcements
   category_id: DIC_kwDOBuRWN84DHJLM
   theme: light
+

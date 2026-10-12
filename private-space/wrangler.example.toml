@@ -1,0 +1,27 @@
+name = "zichen-private-space"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = false
+preview_urls = false
+
+# Use a dedicated private hostname. Do not put this in front of public research pages.
+# routes = [{ pattern = "friends.zichen.me", custom_domain = true }]
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+
+[vars]
+ACCESS_TEAM_DOMAIN = "REPLACE.cloudflareaccess.com"
+ACCESS_AUD = "REPLACE_WITH_APPLICATION_AUDIENCE"
+OWNER_EMAIL = "REPLACE_WITH_YOUR_LOGIN_EMAIL"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "zichen-private-space"
+database_id = "REPLACE_WITH_DATABASE_ID"
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "zichen-private-media"
