@@ -120,7 +120,7 @@ document.addEventListener('click', e => {
 document.addEventListener('submit', e => {
   e.preventDefault(); if (state.busy) return;
   const form = e.target;
-  if (form.id === 'add-friend') action(async () => {
+  if (form.getAttribute('id') === 'add-friend') action(async () => {
     await put('/api/admin/friends', { name:form.elements.name.value, email:form.elements.email.value.trim(), active:true, music:true, dance:true, journal:false });
     form.reset(); await load(); status('朋友已添加。请把此空间链接发给对方；Journal 默认未开放。');
   });
@@ -129,7 +129,7 @@ document.addEventListener('submit', e => {
     await put('/api/admin/friends', { email:f.email, name:f.name, ...Object.fromEntries(['active','music','dance','journal'].map(k => [k,form.elements[k].checked])) });
     await load(); status('朋友权限已保存。');
   });
-  if (form.id === 'post-form') action(async () => {
+  if (form.getAttribute('id') === 'post-form') action(async () => {
     const id = state.editing || form.elements.id.value;
     const variants = {};
     for (const lang of ['zh','en']) {
@@ -140,7 +140,7 @@ document.addEventListener('submit', e => {
     await put(`/api/admin/posts/${encodeURIComponent(id)}`, { section:form.elements.section.value, visibility:form.elements.visibility.value, variants, readers:[...form.querySelectorAll('[name=reader]:checked')].map(x => x.value) });
     await load(); edit(state.adminPosts.find(p => p.id === id)); status('文章与权限已保存。');
   });
-  if (form.id === 'media-form') action(async () => {
+  if (form.getAttribute('id') === 'media-form') action(async () => {
     const file = $('#media-file').files[0];
     if (!file || !state.editing) throw new Error('请先保存文章，再选择文件。');
     if (file.size > 50 * 1024 * 1024) throw new Error('单个文件最大 50 MiB。');
